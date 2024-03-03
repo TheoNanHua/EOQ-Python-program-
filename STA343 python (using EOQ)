@@ -1,0 +1,24 @@
+import math
+
+def calculate_eoq(demand_in_units, cost_of_ordering, cost_of_carrying):
+    """
+    Calculate the Economic Order Quantity (EOQ) for a single item.
+
+    Args:
+        demand_in_units (int): Annual demand in units.
+        cost_of_ordering (float): Cost of placing an order.
+        cost_of_carrying (float): Cost of carrying one unit of inventory per year.
+
+    Returns:
+        float: Calculated EOQ.
+    """
+    eoq = math.sqrt((2 * demand_in_units * cost_of_ordering) / cost_of_carrying)
+    return eoq
+
+# Example usage
+demand = 5000
+ordering_cost = 300
+carrying_cost = 10
+
+calculated_eoq = calculate_eoq(demand, ordering_cost, carrying_cost)
+print('Calculated EOQ:', calculated_eoq)
